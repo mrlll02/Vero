@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f8f1e8">
+<title>Para Vero · Una historia para recordar ❤️</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&display=swap" rel="stylesheet">
+<style>
+#nl-badge-frame{display:none!important;visibility:hidden!important;pointer-events:none!important}
+:root{--cream:#fbf6ef;--ink:#70594d;--muted:#a58b7c;--terra:#bd6848;--rose:#e8b9a6;--line:#eadbce;--hand:'Caveat','Segoe Script','Bradley Hand',cursive}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:Georgia,'Times New Roman',serif;overflow-x:hidden}
+button{font:inherit;cursor:pointer}
+.page{max-width:1000px;margin:auto;min-height:100vh;background:linear-gradient(180deg,#fffaf4,#f8efe5);overflow:hidden;position:relative}
+@media(min-width:1040px){body{padding:20px 0}.page{border-radius:18px;box-shadow:0 0 40px #6c4a3515}}
+p{line-height:1.7}
+h1{font-size:clamp(32px,8vw,56px);font-weight:normal;line-height:1.15;margin:0 0 14px}
+h2{font-size:clamp(26px,5vw,34px);font-weight:normal;text-align:center;margin:0 0 18px}
+.tiny{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--muted)}
+.sub{font-style:italic;color:var(--muted);font-size:16px}
+.pill{border:0;border-radius:30px;background:var(--terra);color:#fff;padding:14px 28px;box-shadow:0 7px 18px #bd684833;transition:transform .2s}
+.pill:active{transform:scale(.96)}
+.pill:focus-visible,.pola:focus-visible,.lb button:focus-visible{outline:3px solid var(--terra);outline-offset:3px}
+section{padding:56px 20px;text-align:center}
+.kicker{font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--muted);margin-bottom:12px}
+
+/* HERO */
+.hero{min-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:34px 26px;position:relative;overflow:hidden}
+.hero>*{position:relative;z-index:2}
+.big-heart{font-size:70px;color:var(--terra);line-height:1;margin:26px 0 20px;animation:beat 1.6s infinite;cursor:pointer;user-select:none}
+.floaty{position:absolute;bottom:-40px;color:var(--rose);opacity:0;animation:rise linear infinite;z-index:1;pointer-events:none}
+@keyframes rise{10%{opacity:.7}100%{transform:translateY(-110svh) translateX(var(--dx)) rotate(var(--r));opacity:0}}
+@keyframes beat{0%,100%{transform:scale(1)}14%{transform:scale(1.18)}28%{transform:scale(1)}42%{transform:scale(1.12)}}
+.mini-stack{position:relative;width:120px;height:110px;margin:6px 0 10px}
+.mini-stack i{position:absolute;inset:0;background:#fff;border:1px solid var(--line);box-shadow:0 6px 14px #6c4a3522;border-radius:2px}
+.mini-stack i:nth-child(1){transform:rotate(-12deg)}.mini-stack i:nth-child(2){transform:rotate(7deg)}
+.mini-stack i:nth-child(3){transform:rotate(-2deg);display:grid;place-items:center;color:var(--terra);font-size:34px}
+
+/* ALBUM */
+.album{display:grid;grid-template-columns:repeat(2,1fr);gap:26px 14px;max-width:900px;margin:34px auto 0;padding:0 4px}
+@media(min-width:620px){.album{grid-template-columns:repeat(3,1fr);gap:40px 26px}}
+@media(min-width:900px){.album{grid-template-columns:repeat(4,1fr)}}
+.pola{position:relative;background:#fff;padding:9px 9px 0;border:0;text-align:center;box-shadow:0 2px 3px #6c4a3518,0 12px 24px #6c4a3524;
+ transform:rotate(var(--rot)) translateY(60px) scale(.9);opacity:0;transition:transform .5s cubic-bezier(.2,.9,.3,1.3),box-shadow .3s,opacity .6s;color:var(--ink);will-change:transform}
+.pola.in{opacity:1;transform:rotate(var(--rot)) translateY(var(--y,0)) scale(1)}
+.pola.in:hover,.pola.in:focus-visible{transform:rotate(0) translateY(-8px) scale(1.06);z-index:5;box-shadow:0 20px 36px #6c4a3540}
+.pola .ph{display:block;aspect-ratio:1/1.05;background:#eaded2;overflow:hidden;position:relative}
+.pola img{width:100%;height:100%;object-fit:cover;display:block;filter:sepia(1) brightness(.35) blur(6px) contrast(.8);transition:filter 2.4s ease .3s}
+.pola.in img{filter:none}
+.pola .ph:after{content:"";position:absolute;inset:0;background:linear-gradient(135deg,#fff3 0%,transparent 40%);pointer-events:none}
+.pola .cap{display:block;font-family:var(--hand);font-size:clamp(18px,4.4vw,23px);line-height:1;padding:11px 2px 13px;min-height:2.2em}
+.pola:before{content:"";position:absolute;top:-11px;left:50%;width:58px;height:20px;margin-left:-29px;background:#e8b9a6aa;transform:rotate(var(--tape,-3deg));box-shadow:0 1px 2px #0002}
+.hint{font-style:italic;color:var(--muted);font-size:14px;margin-top:34px}
+
+/* LIGHTBOX */
+.lb{position:fixed;inset:0;z-index:50;display:none;align-items:center;justify-content:center;background:#2a1f1ae6;backdrop-filter:blur(6px);padding:max(16px,env(safe-area-inset-top)) 16px max(16px,env(safe-area-inset-bottom))}
+.lb.open{display:flex;animation:fadeIn .3s}
+@keyframes fadeIn{from{opacity:0}}
+.card{perspective:1400px;width:min(88vw,420px);touch-action:pan-y}
+.flip{position:relative;transform-style:preserve-3d;transition:transform .8s cubic-bezier(.3,1.2,.4,1)}
+.flip.back{transform:rotateY(180deg)}
+.face{backface-visibility:hidden;-webkit-backface-visibility:hidden;background:#fff;padding:14px 14px 0;box-shadow:0 25px 60px #0008}
+.face.f{position:relative}
+.face.b{position:absolute;inset:0;transform:rotateY(180deg);padding:26px;background:#fbf3e6 repeating-linear-gradient(transparent 0 33px,#e7d5c2 33px 34px);display:flex;align-items:center;justify-content:center;font-family:var(--hand);font-size:clamp(24px,6vw,30px);line-height:34px;color:#7a5645}
+.face .ph{aspect-ratio:1/1.05;background:#eaded2;overflow:hidden}.face .ph img{width:100%;height:100%;object-fit:cover;display:block}
+.face .cap{font-family:var(--hand);font-size:30px;padding:14px 0 16px;color:var(--ink)}
+.lb .bar{position:absolute;bottom:max(16px,env(safe-area-inset-bottom));left:0;right:0;display:flex;justify-content:center;gap:10px}
+.lb .bar button,.lb .x{border:0;border-radius:30px;background:#ffffff22;color:#fff;padding:11px 18px;backdrop-filter:blur(4px)}
+.lb .x{position:absolute;top:max(14px,env(safe-area-inset-top));right:14px;width:44px;height:44px;padding:0;font-size:20px}
+.lb .nav{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:44px;border:0;border-radius:50%;background:#ffffff22;color:#fff;font-size:22px}
+.lb .prev{left:10px}.lb .next{right:10px}
+@media(max-width:560px){.lb .nav{top:auto;bottom:max(16px,env(safe-area-inset-bottom))}.lb .bar{padding:0 64px}}
+
+/* MUSIC / TIMER / LETTER */
+.tape{display:block;margin:26px auto 0;width:min(78vw,300px);aspect-ratio:1.62;border:0;padding:0;background:none;position:relative;transition:transform .3s cubic-bezier(.3,1.5,.5,1);filter:drop-shadow(0 12px 18px #6c4a3530)}
+.tape:hover{transform:rotate(-2deg) scale(1.03)}.tape:active{transform:scale(.97)}
+.tape:focus-visible{outline:3px solid var(--terra);outline-offset:6px}
+.tape .shell{position:absolute;inset:0;background:#e6d3b8;border:2px solid #cdb392;border-radius:10px}
+.tape .shell:before{content:"";position:absolute;left:5%;right:5%;top:6%;height:7%;background:#a9825a;border-radius:3px}
+.tape .shell:after{content:"";position:absolute;left:50%;bottom:0;width:46%;height:16%;margin-left:-23%;background:#d8c19f;border-radius:6px 6px 0 0}
+.tape .label{position:absolute;left:8%;right:8%;top:20%;height:34%;background:#fffaf0;border:1px solid #d9c3a6;border-radius:4px;display:grid;place-items:center;font-family:var(--hand);font-size:clamp(22px,6vw,28px);color:#a0533a;background-image:repeating-linear-gradient(transparent 0 24px,#e9dcc8 24px 25px);background-position:0 8px}
+.tape .win{position:absolute;left:24%;right:24%;top:60%;height:20%;background:#2b211d;border-radius:20px;display:flex;justify-content:space-around;align-items:center;padding:0 6%}
+.reel{width:28px;height:28px;border-radius:50%;background:radial-gradient(circle,#2b211d 0 22%,#f3ead9 23% 100%);position:relative;animation:spin 2s linear infinite paused}
+.reel:before,.reel:after{content:"";position:absolute;left:50%;top:6%;bottom:6%;width:3px;margin-left:-1.5px;background:#2b211d;border-radius:2px}
+.reel:after{transform:rotate(90deg)}
+.reel i{position:absolute;inset:0;transform:rotate(45deg)}.reel i:before{content:"";position:absolute;left:50%;top:6%;bottom:6%;width:3px;margin-left:-1.5px;background:#2b211d}
+.tape.play .reel{animation-play-state:running}.tape.play{animation:wob 2.4s ease-in-out infinite}
+@keyframes wob{50%{transform:rotate(-1.5deg) translateY(-3px)}}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes flip{0%{transform:perspective(700px) rotateY(0) scale(1)}45%{transform:perspective(700px) rotateY(200deg) scale(1.12)}100%{transform:perspective(700px) rotateY(360deg) scale(1)}}
+.tape.spin{animation:flip .9s cubic-bezier(.3,1.3,.5,1)}
+.tape-hint{font-family:var(--hand);font-size:22px;color:var(--muted);margin:14px 0 0;transition:opacity .3s}
+.yt{width:min(86vw,420px);margin:0 auto;overflow:hidden;max-height:0;opacity:0;transition:max-height .8s cubic-bezier(.3,1,.4,1),opacity .6s,margin .6s;background:#fff;border-radius:6px;box-shadow:0 8px 24px #6c4a3530}
+.yt.open{max-height:360px;opacity:1;margin-top:22px;padding:6px}
+.yt .frame{position:relative;aspect-ratio:16/9;background:#000}
+.yt iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.timer{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin:22px 0}
+.unit{background:#fffaf4;border:1px solid var(--line);border-radius:8px;padding:12px 9px;min-width:70px}
+.num{font-size:26px;color:var(--terra);display:block;font-variant-numeric:tabular-nums}
+.unit small{font-size:10px;letter-spacing:1px;color:var(--muted);text-transform:uppercase}
+.env{width:min(86vw,320px);height:200px;margin:30px auto 0;position:relative;cursor:pointer;border:0;background:none;display:block}
+.env .body{position:absolute;inset:60px 0 0;background:#e8b9a6;border-radius:4px;z-index:3;box-shadow:0 10px 24px #6c4a3528;display:grid;place-items:center;color:#fff;font-size:34px}
+.env .flap{position:absolute;left:0;right:0;top:60px;height:80px;background:#d9a18a;clip-path:polygon(0 0,100% 0,50% 100%);transform-origin:top;transition:transform .6s;z-index:4}
+.env.open .flap{transform:rotateX(180deg);z-index:1}
+.env .body{transition:opacity .5s .4s}.env.open .body{opacity:.0;pointer-events:none}
+.letter{max-width:520px;margin:0 auto;background:#f4e5d4;padding:0 24px;text-align:left;line-height:1.85;font-size:16px;box-shadow:0 8px 22px #6c4a3515;max-height:0;overflow:hidden;opacity:0;transition:max-height 1.4s ease,padding .8s,opacity .8s,margin .8s;margin-top:0}
+.letter.show{max-height:900px;padding:26px 24px;opacity:1;margin-top:-30px}
+.letter .sign{text-align:right;font-family:var(--hand);font-size:26px;margin-top:18px}
+.final{background:#302622;color:#f9e9db;padding:64px 22px}.final p{color:#e8cfc0}
+.final .pola{max-width:260px;margin:26px auto 0;--rot:-3deg}
+footer{text-align:center;padding:22px;color:#b49b8d;font-size:11px;letter-spacing:1px}
+.burst{position:fixed;pointer-events:none;z-index:99;color:var(--terra);animation:pop 1.1s ease-out forwards}
+@keyframes pop{to{transform:translate(var(--bx),var(--by)) scale(1.4) rotate(var(--r));opacity:0}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition-duration:.01ms!important}.pola{opacity:1;transform:rotate(var(--rot))}.pola img{filter:none}.letter{max-height:none}}
+</style>
+</head>
+<body>
+<div class="page">
+  <header class="hero" id="inicio">
+    <div class="tiny">Una pequeña sorpresa para ti</div>
+    <div class="big-heart" id="heart" title="Tócame">♥</div>
+    <h1>Para Vero,<br>mi persona especial</h1>
+    <p class="sub">Vero, hay historias que merecen ser contadas…<br>y estoy deseando escribir la nuestra contigo.</p>
+    <div class="mini-stack" aria-hidden="true"><i></i><i></i><i>♡</i></div>
+    <button class="pill" onclick="document.querySelector('#album').scrollIntoView({behavior:'smooth'})">Abrir nuestro álbum ♥</button>
+    <p class="tiny" style="margin-top:40px">Hecho con mucho amor</p>
+  </header>
+
+  <main id="historia">
+    <section id="album">
+      <div class="kicker">Álbum de recuerdos</div>
+      <h2>Nuestras polaroids</h2>
+      <p class="sub">Cada foto se revela sola. Toca una para verla grande y darle la vuelta.</p>
+      <div class="album" id="grid"></div>
+      <p class="hint">Cambia las fotos por las vuestras: img-1.jpeg … img-12.jpeg</p>
+    </section>
+
+    <section>
+      <div class="kicker">Nuestra canción</div>
+      <h2>Una melodía para Vero</h2>
+      <button class="tape" id="tape" aria-label="Poner nuestra canción" aria-expanded="false">
+        <span class="shell"></span><span class="label">Nuestra canción</span>
+        <span class="win"><span class="reel"><i></i></span><span class="reel"><i></i></span></span>
+      </button>
+      <p class="tape-hint" id="tapeHint">Toca para ponerla</p>
+      <div class="yt" id="yt"><div class="frame" id="ytFrame"></div></div>
+    </section>
+
+    <section>
+      <div class="kicker">Cada segundo cuenta</div>
+      <h2 id="timer-title">Desde que comenzó nuestra historia</h2>
+      <p class="sub">Cada segundo de esta historia será especial</p>
+      <div class="timer">
+        <div class="unit"><span class="num" id="days">0</span><small>Días</small></div>
+        <div class="unit"><span class="num" id="hours">0</span><small>Horas</small></div>
+        <div class="unit"><span class="num" id="minutes">0</span><small>Minutos</small></div>
+        <div class="unit"><span class="num" id="seconds">0</span><small>Segundos</small></div>
+      </div>
+      <p class="tiny" id="timer-caption">Nuestra fecha especial: 1 de enero de 2027</p>
+    </section>
+
+    <section>
+      <div class="kicker">Unas palabras para ti</div>
+      <h2>Mi persona favorita</h2>
+      <p class="sub">Toca el sobre para abrirlo</p>
+      <button class="env" id="env" aria-label="Abrir carta"><span class="flap"></span><span class="body">♥</span></button>
+      <div class="letter" id="letter">
+        Vero, quiero que sepas lo especial que eres. Me hace ilusión imaginar todas las sonrisas, abrazos, aventuras y pequeños momentos que todavía nos quedan por vivir.
+        <br><br>
+        No hace falta que todo sea perfecto. Lo bonito será construir algo nuestro, cuidarlo con cariño y elegirnos cada día.
+        <br><br>
+        Ojalá esta sea la primera de muchísimas historias preciosas.
+        <div class="sign">Para ti, Vero. Con todo mi cariño ♥</div>
+      </div>
+    </section>
+
+    <section class="final">
+      <div class="big-heart">♥</div>
+      <h2>Vero, qué bonito será vivir esta historia</h2>
+      <p>Que el 1 de enero de 2027 sea el comienzo de algo precioso.</p>
+      <div class="pola in" style="--y:0"><span class="ph"><img src="./img-12.jpeg" alt="Cena para dos" onerror="fb(this)"></span><span class="cap">Cena para dos</span></div>
+      <p class="sub" style="color:#e8cfc0;margin-top:28px">Nuestra historia tiene muchas páginas en blanco, y me hace ilusión llenarlas contigo…</p>
+      <p style="font-size:24px">♥</p>
+    </section>
+  </main>
+  <footer>HECHO CON AMOR · PARA SIEMPRE</footer>
+</div>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Foto ampliada">
+  <button class="x" id="lbx" aria-label="Cerrar">✕</button>
+  <button class="nav prev" id="lbp" aria-label="Anterior">‹</button>
+  <div class="card"><div class="flip" id="flip">
+    <div class="face f"><div class="ph"><img id="lbimg" alt=""></div><div class="cap" id="lbcap"></div></div>
+    <div class="face b" id="lbback"></div>
+  </div></div>
+  <button class="nav next" id="lbn" aria-label="Siguiente">›</button>
+  <div class="bar"><button id="lbf">Dar la vuelta</button><button id="lbh">♥ Me encanta</button></div>
+</div>
+
+<script>
+// ===== Fotos: cambia los textos a tu gusto (12 fotos: img-1.jpeg … img-12.jpeg) =====
+const FOTOS=[
+ ["Un corazón en la playa","Dibujamos un corazón frente al mar, y el mío ya era tuyo."],
+ ["Libres en el mar","Con los brazos abiertos y el alma feliz: así me haces sentir."],
+ ["Atardecer a tu lado","Cualquier playa es perfecta si estás tú."],
+ ["Risas junto al lago","Entre montañas y verde, yo solo te miraba a ti."],
+ ["Luces y abrazos","Un banco, unas lucecitas y tú: la noche perfecta."],
+ ["Con la montaña de fondo","Tengo las mejores vistas del mundo, pero la mejor eres tú."],
+ ["Nuestro rincón","Volvería mil veces a este lugar, si es contigo."],
+ ["Mano con mano","Caminar contigo por la orilla es mi plan favorito."],
+ ["Noche de luces","Hasta de noche, contigo todo brilla."],
+ ["Tan cerquita","Tu cara junto a la mía: mi foto favorita."],
+ ["Brindis por nosotros","Por cada momento vivido y por los que nos faltan."],
+ ["Cena para dos","Entre copas y risas, otra noche que guardo para siempre."]
+];
+const $=s=>document.querySelector(s), rnd=(a,b)=>Math.random()*(b-a)+a;
+const fb=i=>{i.onerror=null;i.src="data:image/svg+xml,"+encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 105"><rect width="100" height="105" fill="#eaded2"/><text x="50" y="58" font-size="30" text-anchor="middle" fill="#e8b9a6">♥</text></svg>')};
+window.fb=fb;
+
+// Hero: corazones flotantes
+for(let i=0;i<14;i++){const e=document.createElement('span');e.className='floaty';e.textContent=i%3?'♥':'♡';
+ e.style.cssText=`left:${rnd(2,96)}%;font-size:${rnd(14,36)}px;animation-duration:${rnd(7,14)}s;animation-delay:${rnd(0,10)}s;--dx:${rnd(-40,40)}px;--r:${rnd(-40,40)}deg`;$('.hero').appendChild(e)}
+
+// Explosión de corazones
+function burst(x,y,n=10){for(let i=0;i<n;i++){const e=document.createElement('span');e.className='burst';e.textContent=i%2?'♥':'♡';
+ const a=rnd(0,6.28),d=rnd(40,110);e.style.cssText=`left:${x}px;top:${y}px;font-size:${rnd(14,28)}px;--bx:${Math.cos(a)*d}px;--by:${Math.sin(a)*d-40}px;--r:${rnd(-60,60)}deg`;
+ document.body.appendChild(e);setTimeout(()=>e.remove(),1200)}}
+$('#heart').addEventListener('click',e=>burst(e.clientX,e.clientY,16));
+addEventListener('pointerdown',e=>{if(e.target.closest('button,.pola,.lb'))return;burst(e.clientX,e.clientY,4)});
+
+// Álbum
+const grid=$('#grid');
+FOTOS.forEach((f,i)=>{
+ const b=document.createElement('button');b.className='pola';b.setAttribute('aria-label','Abrir foto: '+f[0]);
+ b.style.cssText=`--rot:${(rnd(-6,6)).toFixed(1)}deg;--tape:${rnd(-8,8).toFixed(0)}deg;--y:${i%2?'14px':'0px'};transition-delay:${(i%4)*.08}s,0s,0s,0s`;
+ b.innerHTML=`<span class="ph"><img loading="lazy" src="./img-${i+1}.jpeg" alt="${f[0]}" onerror="fb(this)"></span><span class="cap">${f[0]}</span>`;
+ b.onclick=()=>open(i);grid.appendChild(b)});
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.25});
+document.querySelectorAll('.pola').forEach(p=>io.observe(p));
+
+// Inclinación 3D suave en escritorio
+grid.addEventListener('pointermove',e=>{const p=e.target.closest('.pola.in');if(!p||e.pointerType!=='mouse')return;
+ const r=p.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;
+ p.style.transform=`perspective(600px) rotateY(${x*14}deg) rotateX(${-y*14}deg) translateY(-8px) scale(1.06)`});
+grid.addEventListener('pointerout',e=>{const p=e.target.closest('.pola');if(p)p.style.transform=''});
+
+// Lightbox
+let cur=0;const lb=$('#lb'),flip=$('#flip');
+function show(i){cur=(i+FOTOS.length)%FOTOS.length;flip.classList.remove('back');
+ const img=$('#lbimg');img.onerror=()=>fb(img);img.src=`./img-${cur+1}.jpeg`;img.alt=FOTOS[cur][0];
+ $('#lbcap').textContent=FOTOS[cur][0];$('#lbback').textContent=FOTOS[cur][1]}
+function open(i){show(i);lb.classList.add('open');document.body.style.overflow='hidden';$('#lbx').focus()}
+function close(){lb.classList.remove('open');document.body.style.overflow=''}
+$('#lbx').onclick=close;$('#lbp').onclick=()=>show(cur-1);$('#lbn').onclick=()=>show(cur+1);
+$('#lbf').onclick=()=>flip.classList.toggle('back');
+$('#lbh').onclick=e=>{const r=e.target.getBoundingClientRect();burst(r.left+r.width/2,r.top,18)};
+lb.addEventListener('click',e=>{if(e.target===lb)close()});
+flip.addEventListener('dblclick',e=>burst(e.clientX,e.clientY,14));
+addEventListener('keydown',e=>{if(!lb.classList.contains('open'))return;
+ if(e.key==='Escape')close();if(e.key==='ArrowLeft')show(cur-1);if(e.key==='ArrowRight')show(cur+1);if(e.key===' '){e.preventDefault();flip.classList.toggle('back')}});
+let sx=null;lb.addEventListener('touchstart',e=>sx=e.touches[0].clientX,{passive:true});
+lb.addEventListener('touchend',e=>{if(sx===null)return;const d=e.changedTouches[0].clientX-sx;if(Math.abs(d)>60)show(cur+(d<0?1:-1));sx=null});
+
+// Casete + YouTube
+const tape=$('#tape'),yt=$('#yt'),hint=$('#tapeHint');
+tape.onclick=()=>{tape.classList.remove('spin');void tape.offsetWidth;tape.classList.add('spin');const on=!tape.classList.contains('play');
+ tape.classList.toggle('play',on);tape.setAttribute('aria-expanded',on);yt.classList.toggle('open',on);
+ hint.textContent=on?'Toca para pausarla':'Toca para ponerla';
+ $('#ytFrame').innerHTML=on?'<iframe src="https://www.youtube.com/embed/UnIze5Sr9A4?autoplay=1&rel=0&playsinline=1" title="Nuestra canción" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>':''};
+
+tape.addEventListener('animationend',e=>{if(e.animationName==='flip')tape.classList.remove('spin')});
+// Carta
+$('#env').onclick=e=>{$('#env').classList.add('open');$('#letter').classList.add('show');const r=e.currentTarget.getBoundingClientRect();burst(r.left+r.width/2,r.top+80,14);
+ setTimeout(()=>$('#letter').scrollIntoView({behavior:'smooth',block:'center'}),500)};
+
+// Contador
+const fechaInicio=new Date('2027-01-01T00:00:00');
+function actualizar(){
+ const ahora=Date.now(),falta=fechaInicio.getTime()-ahora,diff=Math.abs(ahora-fechaInicio.getTime());
+ const d=Math.floor(diff/864e5),h=Math.floor(diff/36e5)%24,m=Math.floor(diff/6e4)%60,s=Math.floor(diff/1e3)%60;
+ $('#timer-caption').textContent=falta>0?'Cuenta atrás para nuestra fecha especial · 1 de enero de 2027':'Desde que comenzó nuestra historia · 1 de enero de 2027';
+ $('#timer-title').textContent=falta>0?'La cuenta atrás para nuestro comienzo':'El tiempo que llevamos compartiendo esta historia';
+ $('#days').textContent=d.toLocaleString('es-ES');
+ $('#hours').textContent=String(h).padStart(2,'0');$('#minutes').textContent=String(m).padStart(2,'0');$('#seconds').textContent=String(s).padStart(2,'0');
+}
+actualizar();setInterval(actualizar,1000);
+</script>
+</body></html>

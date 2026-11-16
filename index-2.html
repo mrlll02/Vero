@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f8f1e8">
+<title>Para Vero · Una historia para recordar ❤️</title>
+<style>#nl-badge-frame {
+  display: none !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+:root{--cream:#fbf6ef;--paper:#fffaf3;--ink:#70594d;--muted:#a58b7c;--terra:#bd6848;--rose:#e8b9a6;--line:#eadbce}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--cream);color:var(--ink);font-family:Georgia,'Times New Roman',serif}
+button{font:inherit}.page{max-width:480px;margin:auto;min-height:100vh;background:linear-gradient(180deg,#fffaf4,#f8efe5);overflow:hidden;box-shadow:0 0 40px #6c4a3510}
+.hero{min-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:34px 26px;position:relative}
+.hero:before,.hero:after{content:"♡";position:absolute;color:#e8c8b8;font-size:38px;opacity:.65}.hero:before{top:12%;left:12%;transform:rotate(-18deg)}.hero:after{right:13%;bottom:15%;font-size:28px}
+.tiny{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--muted)}
+.big-heart{font-size:66px;color:var(--terra);line-height:1;margin:28px 0 22px;animation:pulse 1.8s infinite}
+h1{font-size:clamp(30px,8vw,42px);font-weight:normal;line-height:1.18;margin:0 0 12px}h2{font-size:27px;font-weight:normal;text-align:center;margin:0 0 20px}
+p{line-height:1.7}.sub{font-style:italic;color:var(--muted);font-size:16px}
+.pill{border:0;border-radius:30px;background:var(--terra);color:white;padding:14px 27px;box-shadow:0 7px 18px #bd684833;cursor:pointer;transition:.2s}.pill:active{transform:scale(.97)}
+section{padding:48px 22px;text-align:center}.section-kicker{font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:var(--muted);margin-bottom:12px}
+.photo{width:100%;display:block;object-fit:cover;background:#eaded2;border:8px solid white;box-shadow:0 8px 25px #73543a18}.photo-main{aspect-ratio:4/4.6}.caption{font-style:italic;font-size:14px;margin:14px 0 0;color:#977969}
+.note{background:#f1dfca;padding:22px 20px;margin:22px 4px;border-radius:4px;box-shadow:0 5px 15px #6d4d3010;font-style:italic;line-height:1.7}
+.music{background:#fffaf4;border:1px solid var(--line);padding:16px;border-radius:12px;text-align:left;display:flex;align-items:center;gap:13px}.disc{width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#c87857,#e8b9a6);display:grid;place-items:center;color:white;font-size:20px;flex:none}.music small{display:block;color:var(--muted);margin-top:4px}.music audio{width:100%;margin-top:12px}
+.timer{display:flex;justify-content:center;gap:9px;flex-wrap:wrap;margin:22px 0}.unit{background:#fffaf4;border:1px solid var(--line);border-radius:8px;padding:12px 9px;min-width:67px}.num{font-size:25px;color:var(--terra);display:block}.unit small{font-size:10px;letter-spacing:1px;color:var(--muted);text-transform:uppercase}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.grid .photo{aspect-ratio:1/1.18;border-width:5px}.grid .photo:nth-child(2n){transform:translateY(15px)}
+.letter{background:#f4e5d4;padding:25px 22px;text-align:left;line-height:1.85;font-size:15px;box-shadow:0 8px 22px #6c4a3510}.letter .sign{text-align:right;font-style:italic;margin-top:20px}
+.final{background:#302622;color:#f9e9db;padding:58px 25px}.final p{color:#e8cfc0}.final .photo{border:5px solid #f8e9db;max-height:260px}
+footer{text-align:center;padding:22px;color:#b49b8d;font-size:11px;letter-spacing:1px}
+.hidden{display:none!important}.fade{animation:fade .8s ease both}
+@keyframes pulse{50%{transform:scale(1.12)}}@keyframes fade{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+@media(min-width:600px){body{padding:20px 0}.page{border-radius:18px}}
+</style>
+</head>
+<body>
+<div class="page">
+  <header class="hero" id="inicio">
+    <div class="tiny">Una pequeña sorpresa para ti</div>
+    <div class="big-heart">♥</div>
+    <h1>Para Vero,<br>mi persona especial</h1>
+    <p class="sub">Vero, hay historias que merecen ser contadas…<br>y estoy deseando escribir la nuestra contigo.</p>
+    <button class="pill" onclick="document.querySelector('#historia').scrollIntoView({behavior:'smooth'})">Tengo algo para ti ♥</button>
+    <p class="tiny" style="margin-top:48px">Hecho con mucho amor</p>
+  </header>
+
+  <main id="historia">
+    <section>
+      <div class="section-kicker">♥ Un recuerdo para Vero ♥</div>
+      <img class="photo photo-main" src="./img-1.jpeg" alt="Fotografía de pareja">
+      <p class="caption">Vero, quiero llenar nuestra historia de recuerdos bonitos.</p>
+      <div class="note">“Vero, ojalá cada día nos regale una razón nueva para sonreír y elegirnos.”</div>
+    </section>
+
+    <section>
+      <div class="section-kicker">Nuestra canción</div>
+      <h2>Una melodía para Vero</h2>
+      <div class="music">
+        <div class="disc">♫</div>
+        <div style="flex:1"><strong>Nuestra canción</strong><small>Añade aquí vuestra canción favorita</small></div>
+      </div>
+      <p class="sub" style="font-size:13px">Puedes añadir un archivo MP3 propio al publicar la página.</p>
+    </section>
+
+    <section>
+      <div class="section-kicker">Cada segundo cuenta</div>
+      <h2>Desde que comenzó nuestra historia</h2>
+      <p class="sub">Cada segundo de esta historia será especial</p>
+      <div class="timer" id="timer">
+        <div class="unit"><span class="num" id="days">0</span><small>Días</small></div>
+        <div class="unit"><span class="num" id="hours">0</span><small>Horas</small></div>
+        <div class="unit"><span class="num" id="minutes">0</span><small>Minutos</small></div>
+        <div class="unit"><span class="num" id="seconds">0</span><small>Segundos</small></div>
+      </div>
+      <p class="tiny" id="timer-caption">Nuestra fecha especial: 1 de enero de 2027</p>
+    </section>
+
+    <section>
+      <div class="section-kicker">Nuestros momentos</div>
+      <h2>Los momentos bonitos que nos esperan</h2>
+      <div class="grid">
+        <img class="photo" src="./img-2.jpeg" alt="Recuerdo 1">
+        <img class="photo" src="./img-3.jpeg" alt="Recuerdo 2">
+        <img class="photo" src="./img-4.jpeg" alt="Recuerdo 3">
+        <img class="photo" src="./img-5.jpeg" alt="Recuerdo 4">
+      </div>
+      <p class="caption">Por ahora, unas imágenes de ejemplo; después podremos poner vuestras fotos.</p>
+    </section>
+
+    <section>
+      <div class="section-kicker">Unas palabras para ti</div>
+      <h2>Mi persona favorita</h2>
+      <div class="letter">
+        Vero, quiero que sepas lo especial que eres. Me hace ilusión imaginar todas las sonrisas, abrazos, aventuras y pequeños momentos que todavía nos quedan por vivir.
+        <br><br>
+        No hace falta que todo sea perfecto. Lo bonito será construir algo nuestro, cuidarlo con cariño y elegirnos cada día.
+        <br><br>
+        Ojalá esta sea la primera de muchísimas historias preciosas.
+        <div class="sign">Para ti, Vero. Con todo mi cariño ♥</div>
+      </div>
+    </section>
+
+    <section class="final">
+      <div class="big-heart">♥</div>
+      <h2>Vero, qué bonito será vivir esta historia</h2>
+      <p>Que el 1 de enero de 2027 sea el comienzo de algo precioso.</p>
+      <img class="photo" src="./img-6.jpeg" alt="Un recuerdo especial">
+      <p class="sub" style="color:#e8cfc0;margin-top:24px">Nuestra historia tiene muchas páginas en blanco, y me hace ilusión llenarlas contigo…</p>
+      <p style="font-size:24px">♥</p>
+    </section>
+  </main>
+  <footer>HECHO CON AMOR · PARA SIEMPRE</footer>
+</div>
+<script>
+// Fecha especial personalizada para Vero: 1 de enero de 2027.
+const fechaInicio = new Date('2027-01-01T00:00:00');
+function actualizar(){
+ const ahora = Date.now();
+ const falta = fechaInicio.getTime() - ahora;
+ const diff = Math.abs(ahora - fechaInicio.getTime());
+ const d=Math.floor(diff/86400000),h=Math.floor(diff/3600000)%24,m=Math.floor(diff/60000)%60,s=Math.floor(diff/1000)%60;
+ const caption = document.getElementById('timer-caption');
+ caption.textContent = falta > 0 ? 'Cuenta atrás para nuestra fecha especial · 1 de enero de 2027' : 'Desde que comenzó nuestra historia · 1 de enero de 2027';
+ const heading = document.querySelector('#historia section:nth-of-type(3) h2');
+ heading.textContent = falta > 0 ? 'La cuenta atrás para nuestro comienzo' : 'El tiempo que llevamos compartiendo esta historia';
+ document.getElementById('days').textContent=d.toLocaleString('es-ES');
+ document.getElementById('hours').textContent=String(h).padStart(2,'0');
+ document.getElementById('minutes').textContent=String(m).padStart(2,'0');
+ document.getElementById('seconds').textContent=String(s).padStart(2,'0');
+}
+actualizar();setInterval(actualizar,1000);
+</script>
+</body></html>
